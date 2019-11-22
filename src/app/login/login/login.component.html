@@ -1,0 +1,8 @@
+<form [formGroup]="form">
+    <input id="email" type="email" placeholder="Enter Email" />
+    <input id="password" type="password" e placeholder="*********" />
+    <button type="submit">Sign in</button>
+    <span *ngIf="submitted && form.controls.email.invalid" id="email-error">
+        Please enter a valid email.
+      </span>
+</form>
