@@ -78,10 +78,20 @@ describe('LoginComponent', () => {
   it('should render email validation message when formControl is submitted and invalid', () => {
     expect(querySelector('#email-error')).toBeFalsy();
 
-    component.onSubmit();
+    querySelector('button').click();
 
     fixture.detectChanges();
     expect(querySelector('#email-error')).toBeTruthy();
     expect(querySelector('#email-error').textContent).toContain('Please enter a valid email');
+  })
+
+  it('should render password validation message when formControl is submitted and invalid', () => {
+    expect(querySelector('#password-error')).toBeFalsy();
+
+    querySelector('button').click();
+
+    fixture.detectChanges();
+    expect(querySelector('#password-error')).toBeTruthy();
+    expect(querySelector('#password-error').textContent).toContain('Please enter a valid password.');
   })
 });

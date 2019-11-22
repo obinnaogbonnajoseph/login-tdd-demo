@@ -1,8 +1,13 @@
-<form [formGroup]="form">
-    <input id="email" type="email" placeholder="Enter Email" />
-    <input id="password" type="password" e placeholder="*********" />
-    <button type="submit">Sign in</button>
-    <span *ngIf="submitted && form.controls.email.invalid" id="email-error">
-        Please enter a valid email.
-      </span>
-</form>
+<div class="card">
+    <form [formGroup]="form" (submit)="onSubmit()">
+        <input class="textbox" id="email" type="email" placeholder="Enter Email" />
+        <span class="error-text" *ngIf="submitted && form.controls.email.invalid" id="email-error">
+            Please enter a valid email.
+         </span>
+        <input class="textbox" id="password" type="password" e placeholder="*********" />
+        <span class="error-text" *ngIf="submitted && form.controls.password.invalid" id="password-error">
+            Please enter a valid password.
+        </span>
+        <button class="sign-in text-style" type="submit">Sign in</button>
+    </form>
+</div>
